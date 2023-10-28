@@ -2,5 +2,6 @@ pandas
 streamlit
 altair
 nfl_data_py
+plotly
 
 ### https://pypi.org/project/nfl-data-py/
