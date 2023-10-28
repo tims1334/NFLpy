@@ -2,6 +2,7 @@ import nfl_data_py as nfl
 import streamlit as st
 import plotly.figure_factory as ff
 import pandas as pd
+import scipy
 
 # Get Data
 data = pd.DataFrame()
