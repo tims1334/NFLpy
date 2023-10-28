@@ -1,9 +1,6 @@
 import nfl_data_py as nfl
 import streamlit as st
-from plotly import express as px
 import plotly.figure_factory as ff
-import scipy
-import plotly.graph_objects as go
 import pandas as pd
 
 # Get Data
