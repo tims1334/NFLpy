@@ -56,7 +56,7 @@ passing_attempts = passing_attempt.groupby('passer').agg(games=('game_id','nuniq
 tab1.dataframe(passing_attempts)
 
 passing_players = passing_attempts.reset_index()['passer']
-choose_passer = tab1.selectbox("Choose your Passer", passing_players)
+choose_passer = tab1.selectbox("Choose your Passer", passing_players, index='T.Tagovailoa')
 choose_stat = tab1.selectbox("Choose stat:", ['pass_attempt','pass_touchdown','complete_pass','yards_gained','longest_completion'])
 choose_number = tab1.number_input("Choose the O/U number: ",0.0,500.0,25.0,0.5)
 passing_player_stats = passing_attempt.loc[passing_attempt['passer']==choose_passer]
@@ -87,7 +87,7 @@ rushing_attempts = rushing_attempt.groupby('rusher_player_name').agg(games=('gam
 tab2.dataframe(rushing_attempts)
 
 rushing_players = rushing_attempts.reset_index()['rusher_player_name']
-choose_rusher = tab2.selectbox("Choose your Rusher", rushing_players)
+choose_rusher = tab2.selectbox("Choose your Rusher", rushing_players, index='R.Mostert')
 choose_stat_rush = tab2.selectbox("Choose rushing stat:", ['rush_attempt','rush_touchdown','yards_gained','longest_run'])
 choose_number_rush = tab2.number_input("Choose the rushing O/U number: ",0.0,500.0,25.0,0.5)
 rushing_player_stats = rushing_attempt.loc[rushing_attempt['rusher_player_name']==choose_rusher]
@@ -119,7 +119,7 @@ rec_attempts = rec_attempt.groupby('receiver_player_name').agg(games=('game_id',
 tab3.dataframe(rec_attempts)
 
 rec_players = rec_attempts.reset_index()['receiver_player_name']
-choose_receiver = tab3.selectbox("Choose your Receiver", rec_players)
+choose_receiver = tab3.selectbox("Choose your Receiver", rec_players, 'J.Waddle')
 choose_stat_rec = tab3.selectbox("Choose receiving stat:", ['targets','catches','rec_touchdown','yards_gained','longest_catch'])
 choose_number_rec = tab3.number_input("Choose the receiving O/U number: ",0.0,500.0,25.0,0.5)
 receiving_player_stats = rec_attempt.loc[rec_attempt['receiver_player_name']==choose_receiver]
