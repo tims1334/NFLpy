@@ -119,7 +119,7 @@ rec_attempts = rec_attempt.groupby('receiver_player_name').agg(games=('game_id',
 tab3.dataframe(rec_attempts)
 
 rec_players = rec_attempts.reset_index()['receiver_player_name']
-choose_receiver = tab3.selectbox("Choose your Receiver", rec_players, index=10)
+choose_receiver = tab3.selectbox("Choose your Receiver", rec_players, index=3)
 choose_stat_rec = tab3.selectbox("Choose receiving stat:", ['targets','catches','rec_touchdown','yards_gained','longest_catch'])
 choose_number_rec = tab3.number_input("Choose the receiving O/U number: ",0.0,500.0,25.0,0.5)
 receiving_player_stats = rec_attempt.loc[rec_attempt['receiver_player_name']==choose_receiver]
